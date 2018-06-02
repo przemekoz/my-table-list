@@ -1,0 +1,5 @@
+<button [disabled]="pagination.leftEnd == false" (click)="setPage(0)">start</button>
+<button [disabled]="pagination.left == false" (click)="setPage(+pagination.current - 1)">left</button>
+<button *ngFor="let page of pages" (click)="setPage(+page)" [ngClass]="{'active': pagination.current == page}">{{+page + 1}}</button>
+<button [disabled]="pagination.right == false" (click)="setPage(+pagination.current + 1)">right</button>
+<button [disabled]="pagination.rightEnd == false" (click)="setPage(+pagination.total - 1)">end</button>
