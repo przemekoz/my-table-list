@@ -6,21 +6,21 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { HomePageComponent } from './home-page/home-page.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { RatingSetComponent } from './rating-set/rating-set.component';
 import { ListPaginationComponent } from './list-pagination/list-pagination.component';
+import { PaymentsModule } from './payments/payments.module';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         PageNotFoundComponent,
-        HomePageComponent,
         RatingSetComponent,
         ListPaginationComponent
     ],
     imports: [
+        PaymentsModule,
         BrowserModule,
         MaterialModule,
         HttpClientModule,
