@@ -1,24 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { PaymentsListService } from '../services/payments-list.service';
-import { PaymentsListPagination, ListGetParams } from '../interfaces/payments.interface';
+import { PaymentsListPagination, ListGetParams, PaymentsListItem } from '../interfaces/payments.interface';
 
 @Component({
     templateUrl: './payments-list.component.html',
     styleUrls: ['./payments-list.component.scss']
 })
 export class PaymentsListComponent implements OnInit {
-
+    loading = true;
+    rows: PaymentsListItem[];
     pagination: PaymentsListPagination;
-    loading: boolean;
+
     constructor(private paymentsListService: PaymentsListService) { }
 
-    private _this = this;
-
     changePageCallback(page: number) {
-        console.log(this, `I will change page to: ${page}`);
-        this.getList({
-            page: page
-        });
+        this.getList({ page: page });
     }
 
     ngOnInit() {
@@ -31,7 +27,7 @@ export class PaymentsListComponent implements OnInit {
             .subscribe(
                 data => {
                     this.loading = false;
-                    console.log(data);
+                    this.rows = data.payments;
                     this.pagination = data.pagination;
                 },
                 error => {
@@ -39,5 +35,4 @@ export class PaymentsListComponent implements OnInit {
                     // this.alertService.error(error);
                 });
     }
-
 }

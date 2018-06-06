@@ -7,15 +7,13 @@ import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { RatingSetComponent } from './rating-set/rating-set.component';
 import { PaymentsModule } from './payments/payments.module';
 
 
 @NgModule({
     declarations: [
         AppComponent,
-        PageNotFoundComponent,
-        RatingSetComponent
+        PageNotFoundComponent
     ],
     imports: [
         BrowserModule,
