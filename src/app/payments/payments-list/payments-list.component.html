@@ -1,3 +1,5 @@
 <p>
-  payments-list works!
+    payments-list works!
 </p>
+
+<app-list-pagination *ngIf="pagination" [pagination]="pagination" (changePage)="changePageCallback($event)"></app-list-pagination>

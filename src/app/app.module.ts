@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { RatingSetComponent } from './rating-set/rating-set.component';
-import { ListPaginationComponent } from './list-pagination/list-pagination.component';
 import { PaymentsModule } from './payments/payments.module';
 
 
@@ -16,16 +15,15 @@ import { PaymentsModule } from './payments/payments.module';
     declarations: [
         AppComponent,
         PageNotFoundComponent,
-        RatingSetComponent,
-        ListPaginationComponent
+        RatingSetComponent
     ],
     imports: [
-        PaymentsModule,
         BrowserModule,
         MaterialModule,
         HttpClientModule,
+        LayoutModule,
+        PaymentsModule,
         AppRoutingModule,
-        LayoutModule
     ],
     providers: [],
     bootstrap: [AppComponent]

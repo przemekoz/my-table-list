@@ -21,3 +21,8 @@ export interface PaymentsList {
     payments: PaymentsListItem[];
     pagination: PaymentsListPagination;
 }
+
+
+export interface ListGetParams {
+    page: number;
+}

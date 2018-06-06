@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-list-pagination',
@@ -9,7 +9,7 @@ export class ListPaginationComponent implements OnInit {
 
     currentPage: number;
     @Input() pagination: any;
-    @Input() changeCallback: any;
+    @Output() changePage = new EventEmitter<number>();
 
     pages: string[];
 
@@ -21,7 +21,7 @@ export class ListPaginationComponent implements OnInit {
 
     setPage(page: number) {
         this.pagination.current = page;
-        this.changeCallback(page);
+        this.changePage.emit(page);
     }
 
 }
