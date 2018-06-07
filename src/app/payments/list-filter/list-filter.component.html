@@ -1,3 +1,12 @@
-<p>
-  list-filter works!
-</p>
+<form (submit)="search()">
+
+    <input type="text" [(ngModel)]="filters.supplier" name="supplier" placeholder="Supplier" />
+
+    <select [(ngModel)]="filters.rating" name="rating">
+        <option *ngFor="let option of ratings" [value]="option.value">{{option.label}}</option>
+    </select>
+
+    <button (click)="reset()">reset</button>
+    <button type="submit" (click)="search()">search</button>
+
+</form>

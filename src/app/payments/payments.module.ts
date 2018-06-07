@@ -8,12 +8,14 @@ import { PaymentsComponent } from './payments.component';
 import { RatingSetComponent } from '../rating-set/rating-set.component';
 import { MaterialModule } from '../material/material.module';
 import { ListFilterComponent } from './list-filter/list-filter.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
         CommonModule,
         PaymentsRoutingModule,
-        MaterialModule
+        MaterialModule,
+        FormsModule
     ],
     declarations: [
         PaymentsComponent,
