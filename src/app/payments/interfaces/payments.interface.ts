@@ -30,4 +30,5 @@ export interface PaymentsList {
 
 export interface ListGetParams {
     page: number;
+    filters: PaymentsListFilter;
 }

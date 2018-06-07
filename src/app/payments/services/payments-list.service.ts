@@ -14,9 +14,16 @@ export class PaymentsListService {
     get(params: ListGetParams) {
         let urlParams = new HttpParams();
 
-        if (Number.isInteger(params.page)) {
+        if (params.page > -1) {
             urlParams = urlParams.append('page', params.page + '');
         }
+        if (params.filters.rating > 0) {
+            urlParams = urlParams.append('rating', params.filters.rating + '');
+        }
+        if (params.filters.supplier.length) {
+            urlParams = urlParams.append('query', params.filters.supplier);
+        }
+
         return this.http.get<PaymentsList>('http://test-api.kuria.tshdev.io/', { params: urlParams });
     }
 }

@@ -11,18 +11,24 @@ export class PaymentsListComponent implements OnInit {
     rows: PaymentsListItem[];
     pagination: PaymentsListPagination;
 
+    private current: ListGetParams = {
+        page: 0,
+        filters: { supplier: '', rating: 0 }
+    };
+
     constructor(private paymentsListService: PaymentsListService) { }
 
     changePageCallback(page: number) {
-        this.getList({ page: page });
+        this.getList({ page: page, filters: this.current.filters });
     }
 
     changeFilterCallback(filters: PaymentsListFilter) {
-        console.log(filters)
+        this.current.filters = filters;
+        this.getList({ page: 0, filters: filters });
     }
 
     ngOnInit() {
-        this.getList({ page: 0 });
+        this.getList({ page: 0, filters: { supplier: '', rating: 0 } });
     }
 
     private getList(params: ListGetParams) {
