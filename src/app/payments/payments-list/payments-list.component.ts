@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PaymentsListService } from '../services/payments-list.service';
-import { PaymentsListPagination, ListGetParams, PaymentsListItem } from '../interfaces/payments.interface';
+import { PaymentsListPagination, ListGetParams, PaymentsListItem, PaymentsListFilter } from '../interfaces/payments.interface';
 
 @Component({
     templateUrl: './payments-list.component.html',
@@ -15,6 +15,10 @@ export class PaymentsListComponent implements OnInit {
 
     changePageCallback(page: number) {
         this.getList({ page: page });
+    }
+
+    changeFilterCallback(filters: PaymentsListFilter) {
+        console.log(filters)
     }
 
     ngOnInit() {

@@ -1,5 +1,9 @@
 <mat-spinner *ngIf="loading" diameter="20"></mat-spinner>
 
+
+<app-list-filter (changeFilters)="changeFilterCallback($event)"></app-list-filter>
+
+
 <div class="container">
 
     <div class="row" *ngFor="let row of rows">

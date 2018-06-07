@@ -1,3 +1,8 @@
+export interface PaymentsListFilter {
+    supplier: string;
+    rating: number;
+}
+
 export interface PaymentsListItem {
     payment_supplier: string;
     payment_ref: string;

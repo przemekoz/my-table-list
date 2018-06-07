@@ -7,6 +7,7 @@ import { ListPaginationComponent } from '../list-pagination/list-pagination.comp
 import { PaymentsComponent } from './payments.component';
 import { RatingSetComponent } from '../rating-set/rating-set.component';
 import { MaterialModule } from '../material/material.module';
+import { ListFilterComponent } from './list-filter/list-filter.component';
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import { MaterialModule } from '../material/material.module';
         PaymentsComponent,
         PaymentsListComponent,
         ListPaginationComponent,
-        RatingSetComponent
+        RatingSetComponent,
+        ListFilterComponent
     ]
 })
 export class PaymentsModule { }
