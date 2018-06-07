@@ -6,7 +6,7 @@
 
 <div class="container">
 
-    <div class="row" *ngFor="let row of rows">
+    <div class="row" *ngFor="let row of rows" (click)="showDetails(row)">
         <div class="column">{{row.payment_supplier}}</div>
         <div class="column">{{row.payment_ref}}</div>
         <div class="column">

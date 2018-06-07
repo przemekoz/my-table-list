@@ -27,6 +27,10 @@ export class PaymentsListComponent implements OnInit {
         this.getList({ page: 0, filters: filters });
     }
 
+    showDetails(element) {
+        window.alert(element.payment_supplier);
+    }
+
     ngOnInit() {
         this.getList({ page: 0, filters: { supplier: '', rating: 0 } });
     }
