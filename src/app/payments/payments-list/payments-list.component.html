@@ -5,13 +5,18 @@
 
 <div class="grid">
 
-    <ng-container *ngFor="let row of rows" (click)="showDetails(row)">
-        <div class="item first-element">{{row.payment_supplier}}</div>
-        <div class="item rating">
+    <div class="header item first-element">Supplier</div>
+    <div class="header item">Rating</div>
+    <div class="header item">Payment ref</div>
+    <div class="header item">Payment amount</div>
+
+    <ng-container *ngFor="let row of rows; let i = index" (click)="showDetails(row)">
+        <div class="item first-element" [ngClass]="{'odd': i % 2 != 0}">{{row.payment_supplier}}</div>
+        <div class="item rating" [ngClass]="{'odd': i % 2 != 0}">
             <app-rating-set [rating]="row.payment_cost_rating" [ref]="row.payment_ref"></app-rating-set>
         </div>
-        <div class="item">{{row.payment_ref}}</div>
-        <div class="item">{{row.payment_amount}}</div>
+        <div class="item" [ngClass]="{'odd': i % 2 != 0}">{{row.payment_ref}}</div>
+        <div class="item" [ngClass]="{'odd': i % 2 != 0}">{{row.payment_amount}}</div>
     </ng-container>
 
 </div>
