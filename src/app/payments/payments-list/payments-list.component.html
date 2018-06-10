@@ -7,8 +7,8 @@
 
     <ng-container *ngFor="let row of rows" (click)="showDetails(row)">
         <div class="item first-element">{{row.payment_supplier}}</div>
-        <div class="item">
-            <!-- <app-rating-set [rating]="row.payment_cost_rating" [ref]="row.payment_ref"></app-rating-set> -->
+        <div class="item rating">
+            <app-rating-set [rating]="row.payment_cost_rating" [ref]="row.payment_ref"></app-rating-set>
         </div>
         <div class="item">{{row.payment_ref}}</div>
         <div class="item">{{row.payment_amount}}</div>

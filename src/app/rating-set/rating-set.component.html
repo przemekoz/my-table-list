@@ -1,5 +1,7 @@
-<button [ngClass]="{'active': rating >= 1}" (click)="setRating(1)">Ł</button>
-<button [ngClass]="{'active': rating >= 2}" (click)="setRating(2)">Ł</button>
-<button [ngClass]="{'active': rating >= 3}" (click)="setRating(3)">Ł</button>
-<button [ngClass]="{'active': rating >= 4}" (click)="setRating(4)">Ł</button>
-<button [ngClass]="{'active': rating == 5}" (click)="setRating(5)">Ł</button>
+<div class="container">
+    <button [ngClass]="{'active': rating >= 1}" (click)="setRating(1)"></button>
+    <button [ngClass]="{'active': rating >= 2}" (click)="setRating(2)"></button>
+    <button [ngClass]="{'active': rating >= 3}" (click)="setRating(3)"></button>
+    <button [ngClass]="{'active': rating >= 4}" (click)="setRating(4)"></button>
+    <button [ngClass]="{'active': rating == 5}" (click)="setRating(5)"></button>
+</div>

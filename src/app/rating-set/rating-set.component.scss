@@ -1,5 +1,24 @@
-.active {
-    background: blue;
-    width: 30px;
-    height: 30px;
+.container {
+    width: 146px;
+    height: 26px;
+    button {
+        background-image: url(/assets/img/pound_off.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        margin-right: 4px;
+        width: 26px;
+        height: 26px;
+        border: none;
+        outline: none;
+        .active {
+            background-image: url(/assets/img/pound_on.png);
+        }
+    }
+    button:last-child {
+        margin-right: 0;
+    }
+}
+
+.pound:last-child {
+    margin: 0;
 }

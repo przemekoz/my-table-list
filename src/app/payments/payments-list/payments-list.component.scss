@@ -15,9 +15,14 @@
         text-transform: lowercase;
         border: solid #D4D4D4;
         border-width: 1px 0 0 1px;
+        background: red;
     }
     .item.first-element {
         border-left: 0;
+    }
+    .item.rating {
+        padding: 1em 0;
+        justify-content: center;
     }
     .item:first-letter {
         text-transform: uppercase;
