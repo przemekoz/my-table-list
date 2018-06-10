@@ -1,10 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "styles.variables.scss";
+@font-face {
+    font-family: SourceSansPro;
+    src: url('/assets/SourceSansPro-Regular.otf.woff');
+}
 
-html, * {
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100vw;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
+    color: #555;
+    font-family: SourceSansPro, arial, verdana, sans-serif;
+    font-size: 1em;
+    line-height: 1.2em;
 }
 
 .toolbar-spacer {
@@ -16,4 +32,13 @@ html, * {
     display: flex;
     overflow: hidden;
     justify-content: space-between;
+}
+
+.content-cointainer {
+    display: flex;
+    justify-content: center;
+    .content {
+        width: 80vw;
+        min-height: 80vh;
+    }
 }
