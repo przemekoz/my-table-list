@@ -8,11 +8,16 @@
     border-width: 1px;
     border-radius: 5px;
     .item {
-        padding: 1em 1.1em;
-        font-size: 1em;
+        display: flex;
+        align-items: center;
+        padding: 1em 1.8em;
+        font-size: 0.9em;
         text-transform: lowercase;
         border: solid #D4D4D4;
         border-width: 1px 0 0 1px;
+    }
+    .item.first-element {
+        border-left: 0;
     }
     .item:first-letter {
         text-transform: uppercase;
