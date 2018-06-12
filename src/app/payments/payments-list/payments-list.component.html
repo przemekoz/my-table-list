@@ -1,28 +1,34 @@
-<mat-spinner *ngIf="loading" diameter="20"></mat-spinner>
+<div class="container">
+    <h1>Where your money goes</h1>
+
+    <h4>Payments made by Chichester District Council to invidual suppliers with a value over &pound;500 mad within October.</h4>
+
+    <mat-spinner *ngIf="loading" diameter="20"></mat-spinner>
+
+    <div class="hr"></div>
+
+    <app-list-filter (changeFilters)="changeFilterCallback($event)"></app-list-filter>
+
+    <div class="grid" *ngIf="rows.length">
+        <div class="header item first-element">Supplier</div>
+        <div class="header item center">Pound rating</div>
+        <div class="header item center">Reference</div>
+        <div class="header item center">Value</div>
+
+        <ng-container *ngFor="let row of rows; let i = index" (click)="showDetails(row)">
+            <div class="item first-element" [ngClass]="{'odd': i % 2 != 0}">{{row.payment_supplier}}</div>
+            <div class="item rating" [ngClass]="{'odd': i % 2 != 0}">
+                <app-rating-set [rating]="row.payment_cost_rating" [ref]="row.payment_ref"></app-rating-set>
+            </div>
+            <div class="item center" [ngClass]="{'odd': i % 2 != 0}">{{row.payment_ref}}</div>
+            <div class="item right" [ngClass]="{'odd': i % 2 != 0}">&pound;{{row.payment_amount}}</div>
+        </ng-container>
+    </div>
+    <div *ngIf="!rows.length">
+        <mat-icon>mood_bad</mat-icon>
+        List is empty
+    </div>
 
 
-<app-list-filter (changeFilters)="changeFilterCallback($event)"></app-list-filter>
-
-<div class="grid">
-
-    <div class="header item first-element">Supplier</div>
-    <div class="header item">Rating</div>
-    <div class="header item">Payment ref</div>
-    <div class="header item">Payment amount</div>
-
-    <ng-container *ngFor="let row of rows; let i = index" (click)="showDetails(row)">
-        <div class="item first-element" [ngClass]="{'odd': i % 2 != 0}">{{row.payment_supplier}}</div>
-        <div class="item rating" [ngClass]="{'odd': i % 2 != 0}">
-            <app-rating-set [rating]="row.payment_cost_rating" [ref]="row.payment_ref"></app-rating-set>
-        </div>
-        <div class="item" [ngClass]="{'odd': i % 2 != 0}">{{row.payment_ref}}</div>
-        <div class="item" [ngClass]="{'odd': i % 2 != 0}">{{row.payment_amount}}</div>
-    </ng-container>
-
+    <app-list-pagination *ngIf="pagination" [pagination]="pagination" (changePage)="changePageCallback($event)"></app-list-pagination>
 </div>
-
-<app-list-pagination *ngIf="pagination" [pagination]="pagination" (changePage)="changePageCallback($event)"></app-list-pagination>
-
-
-
-<div class="item">Supplier</div>

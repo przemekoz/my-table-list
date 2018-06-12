@@ -16,7 +16,11 @@ export class RatingSetComponent implements OnInit {
     }
 
     setRating(rating: number) {
-        this.rating = rating;
+        if (rating === this.rating) {
+            this.rating = 0;
+        } else {
+            this.rating = rating;
+        }
         console.log(`${this.rating === 5 ? 'Yay!' : ''} I will change rating for: ${this.ref} to ${this.rating}`);
     }
 }

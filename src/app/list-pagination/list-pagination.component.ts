@@ -7,7 +7,6 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angu
 })
 export class ListPaginationComponent implements OnInit, OnChanges {
 
-    currentPage: number;
     @Input() pagination: any;
     @Output() changePage = new EventEmitter<number>();
 
@@ -16,7 +15,9 @@ export class ListPaginationComponent implements OnInit, OnChanges {
     constructor() { }
 
     ngOnInit() {
-        this.pages = Object.keys(this.pagination.links);
+        if (this.pagination && this.pagination.links) {
+            this.pages = Object.keys(this.pagination.links);
+        }
     }
 
     ngOnChanges() {
@@ -27,5 +28,4 @@ export class ListPaginationComponent implements OnInit, OnChanges {
         this.pagination.current = page;
         this.changePage.emit(page);
     }
-
 }

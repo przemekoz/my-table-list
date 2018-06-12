@@ -1,5 +1,26 @@
-.active {
-    background: blue;
-    width: 30px;
-    height: 30px;
+.container {
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    button {
+        background-image: url(/assets/img/paging_bg.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        margin-right: 4px;
+        width: 28px;
+        height: 28px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: #717171;
+        font-size: 9px;
+        font-weight: bold;
+    }
+    .active {
+        color: #F2F2F2;
+        background-image: url(/assets/img/paging_bg_on.png);
+    }
+    button:last-child {
+        margin-right: 0;
+    }
 }

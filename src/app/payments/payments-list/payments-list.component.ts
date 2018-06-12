@@ -46,6 +46,18 @@ export class PaymentsListComponent implements OnInit {
                 },
                 error => {
                     this.loading = false;
+                    this.rows = [];
+                    this.pagination = {
+                        left: false,
+                        leftEnd: false,
+                        links: [],
+                        right: false,
+                        rightEnd: false,
+                        current: 0,
+                        total: 0,
+                        from: 0,
+                        to: 0
+                    };
                     // this.alertService.error(error);
                 });
     }

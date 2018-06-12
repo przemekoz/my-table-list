@@ -2,11 +2,12 @@
 
     <input type="text" [(ngModel)]="filters.supplier" name="supplier" placeholder="Supplier" />
 
-    <select [(ngModel)]="filters.rating" name="rating">
-        <option *ngFor="let option of ratings" [value]="option.value">{{option.label}}</option>
-    </select>
+    <div>
+        <select [(ngModel)]="filters.rating" name="rating">
+            <option *ngFor="let option of ratings" [value]="option.value">{{option.label}}</option>
+        </select>
+    </div>
 
-    <button (click)="reset()">reset</button>
-    <button type="submit" (click)="search()">search</button>
-
+    <button class="reset" (click)="reset()">Reset</button>
+    <button type="submit" (click)="search()">Search</button>
 </form>
