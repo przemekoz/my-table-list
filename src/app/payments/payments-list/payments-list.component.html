@@ -7,9 +7,9 @@
 
     <div class="hr"></div>
 
-    <app-list-filter (changeFilters)="changeFilterCallback($event)"></app-list-filter>
+    <app-list-filter class="app-list-filter" (changeFilters)="changeFilterCallback($event)"></app-list-filter>
 
-    <div class="grid" *ngIf="rows.length">
+    <div class="grid" *ngIf="rows?.length">
         <div class="header item first-element">Supplier</div>
         <div class="header item center">Pound rating</div>
         <div class="header item center">Reference</div>
@@ -24,7 +24,7 @@
             <div class="item right" [ngClass]="{'odd': i % 2 != 0}">&pound;{{row.payment_amount}}</div>
         </ng-container>
     </div>
-    <div *ngIf="!rows.length">
+    <div *ngIf="!rows?.length">
         <mat-icon>mood_bad</mat-icon>
         List is empty
     </div>

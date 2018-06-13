@@ -13,18 +13,6 @@ export class PaymentsListService {
     constructor(private http: HttpClient) { }
 
     get(params: ListGetParams) {
-        let urlParams = new HttpParams();
-
-        if (params.page > -1) {
-            urlParams = urlParams.append('page', params.page + '');
-        }
-        if (params.filters.rating > 0) {
-            urlParams = urlParams.append('rating', params.filters.rating + '');
-        }
-        if (params.filters.supplier.length) {
-            urlParams = urlParams.append('query', params.filters.supplier);
-        }
-
         return of(
             {
                 payments: [
@@ -53,6 +41,22 @@ export class PaymentsListService {
                 }
             }
         );
-        // return this.http.get<PaymentsList>('http://test-api.kuria.tshdev.io/', { params: urlParams });
+        // return this.http.get<PaymentsList>('http://test-api.kuria.tshdev.io/', { params: this.prepareGetParam(params) });
+    }
+
+    prepareGetParam(params: ListGetParams): HttpParams {
+        let result = new HttpParams();
+
+        if (params.page > -1) {
+            result = result.append('page', params.page + '');
+        }
+        if (params.filters.rating >= 0 && params.filters.rating < 6) {
+            result = result.append('rating', params.filters.rating + '');
+        }
+        if (params.filters.supplier.length) {
+            result = result.append('query', params.filters.supplier);
+        }
+
+        return result;
     }
 }

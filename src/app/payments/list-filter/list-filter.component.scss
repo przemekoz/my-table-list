@@ -1,3 +1,26 @@
+.grid {
+    display: grid;
+    grid-template-columns: 45% 20% 73px 80px;
+    grid-gap: 10px;
+}
+
+// for large screens
+@media (min-width: 769px) {
+    .grid {
+        width: 800px;
+    }
+} // for tablets
+@media (max-width: 768px) {
+    .grid {
+        width: 400px;
+    }
+} // for large mobile
+@media (max-width: 425px) {
+    .grid {
+        width: 300px;
+    }
+}
+
 input {
     color: #555555;
     border: 1px solid #CBCBCB;
@@ -7,14 +30,14 @@ input {
     height: 30px;
     padding: 0 9px;
     min-width: 100px;
-    width: 30%;
+    width: 100%;
 }
 
-div {
+.select {
     background: #EAECED;
     border-radius: 5px;
     height: 30px;
-    width: 20%;
+    width: 100%;
     padding: 6px 5px;
     select {
         font-size: 0.7em;

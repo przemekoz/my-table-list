@@ -10,12 +10,16 @@ export class ListFilterComponent implements OnInit {
 
     filters: PaymentsListFilter = {
         supplier: '',
-        rating: 0
+        rating: -1
     };
 
     ratings = [
         {
-            label: '-',
+            label: 'Select pound rating',
+            value: -1
+        },
+        {
+            label: 'Rating 0',
             value: 0
         },
         {
@@ -53,7 +57,7 @@ export class ListFilterComponent implements OnInit {
     }
 
     reset() {
-        this.filters.rating = 0;
+        this.filters.rating = -1;
         this.filters.supplier = '';
         this.changeFilters.emit(this.filters);
     }
