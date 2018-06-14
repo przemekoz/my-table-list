@@ -1,7 +1,7 @@
 <div class="container">
-    <button *ngIf="pagination?.leftEnd" (click)="setPage(0)">&lt;&lt;</button>
-    <button *ngIf="pagination?.left" (click)="setPage(+pagination.current - 1)">&lt;</button>
+    <button *ngIf="pagination?.leftEnd" (click)="setPage(0)">&#x226A;</button>
+    <button *ngIf="pagination?.left" (click)="setPage(+pagination.current - 1)">&#x3C;</button>
     <button *ngFor="let page of pages" (click)="setPage(+page)" [ngClass]="{'active': pagination.current == page}">{{+page + 1}}</button>
-    <button *ngIf="pagination?.right" (click)="setPage(+pagination.current + 1)">&gt;</button>
-    <button *ngIf="pagination?.rightEnd" (click)="setPage(+pagination.total - 1)">&gt;&gt;</button>
+    <button *ngIf="pagination?.right" (click)="setPage(+pagination.current + 1)">&#x3E;</button>
+    <button *ngIf="pagination?.rightEnd" (click)="setPage(+pagination.total - 1)">&#x226B;</button>
 </div>

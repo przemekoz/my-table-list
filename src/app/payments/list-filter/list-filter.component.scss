@@ -73,6 +73,14 @@ button[type=submit] {
     background: linear-gradient(to bottom, #6BA1F3 0%, #2077F0 100%);
 }
 
+button:hover {
+    box-shadow: 0px 0px 1px 1px #C4C4C4;
+}
+
+button[type=submit]:hover {
+    box-shadow: 0px 0px 1px 1px #2077F0;
+}
+
 ::-webkit-input-placeholder {
     color: #999999;
 }
