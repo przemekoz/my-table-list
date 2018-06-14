@@ -15,13 +15,13 @@
         <div class="header item center">Reference</div>
         <div class="header item center">Value</div>
 
-        <ng-container *ngFor="let row of rows; let i = index" (click)="showDetails(row)">
-            <div class="item first-element" [ngClass]="{'odd': i % 2 != 0}">{{row.payment_supplier}}</div>
+        <ng-container *ngFor="let row of rows; let i = index">
+            <div (click)="showDetails(row)" class="item first-element" [ngClass]="{'odd': i % 2 != 0}">{{row.payment_supplier}}</div>
             <div class="item rating" [ngClass]="{'odd': i % 2 != 0}">
                 <app-rating-set [rating]="row.payment_cost_rating" [ref]="row.payment_ref"></app-rating-set>
             </div>
-            <div class="item center" [ngClass]="{'odd': i % 2 != 0}">{{row.payment_ref}}</div>
-            <div class="item right" [ngClass]="{'odd': i % 2 != 0}">&pound;{{row.payment_amount}}</div>
+            <div (click)="showDetails(row)" class="item center" [ngClass]="{'odd': i % 2 != 0}">{{row.payment_ref}}</div>
+            <div (click)="showDetails(row)" class="item right" [ngClass]="{'odd': i % 2 != 0}">&pound;{{row.payment_amount}}</div>
         </ng-container>
     </div>
     <div *ngIf="!rows?.length">

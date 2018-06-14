@@ -3,19 +3,23 @@ import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
     imports: [
         CommonModule,
         MatProgressSpinnerModule,
         BrowserAnimationsModule,
-        MatIconModule
+        MatIconModule,
+        MatDialogModule
+
     ],
     exports: [
         CommonModule,
         MatProgressSpinnerModule,
         BrowserAnimationsModule,
-        MatIconModule
+        MatIconModule,
+        MatDialogModule
     ],
     declarations: []
 })

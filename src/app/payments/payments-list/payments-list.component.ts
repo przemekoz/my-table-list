@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PaymentsListService } from '../services/payments-list.service';
 import { PaymentsListPagination, ListGetParams, PaymentsListItem, PaymentsListFilter } from '../interfaces/payments.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { PaymentDetailDialogComponent } from '../payment-detail-dialog/payment-detail-dialog.component';
 
 @Component({
     templateUrl: './payments-list.component.html',
@@ -16,7 +18,13 @@ export class PaymentsListComponent implements OnInit {
         filters: { supplier: '', rating: 0 }
     };
 
-    constructor(private paymentsListService: PaymentsListService) { }
+    constructor(
+        private paymentsListService: PaymentsListService,
+        public dialog: MatDialog) { }
+
+    ngOnInit() {
+        this.getList({ page: 0, filters: { supplier: '', rating: 0 } });
+    }
 
     changePageCallback(page: number) {
         this.getList({ page: page, filters: this.current.filters });
@@ -28,11 +36,11 @@ export class PaymentsListComponent implements OnInit {
     }
 
     showDetails(element) {
-        window.alert(element.payment_supplier);
-    }
-
-    ngOnInit() {
-        this.getList({ page: 0, filters: { supplier: '', rating: 0 } });
+        this.dialog.open(PaymentDetailDialogComponent, {
+            data: {
+                element: element
+            }
+        });
     }
 
     private getList(params: ListGetParams) {

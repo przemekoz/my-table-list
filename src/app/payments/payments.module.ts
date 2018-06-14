@@ -9,6 +9,7 @@ import { RatingSetComponent } from '../rating-set/rating-set.component';
 import { MaterialModule } from '../material/material.module';
 import { ListFilterComponent } from './list-filter/list-filter.component';
 import { FormsModule } from '@angular/forms';
+import { PaymentDetailDialogComponent } from './payment-detail-dialog/payment-detail-dialog.component';
 
 @NgModule({
     imports: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
         PaymentsListComponent,
         ListPaginationComponent,
         RatingSetComponent,
-        ListFilterComponent
+        ListFilterComponent,
+        PaymentDetailDialogComponent
     ]
 })
 export class PaymentsModule { }
