@@ -66,7 +66,6 @@ export class PaymentsListComponent implements OnInit {
                         from: 0,
                         to: 0
                     };
-                    // this.alertService.error(error);
                 });
     }
 }
