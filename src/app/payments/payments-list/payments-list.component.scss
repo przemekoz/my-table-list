@@ -5,6 +5,7 @@
     box-shadow: 0 0 6px 6px #C0BFBF;
     min-width: 550px;
     background: #FFFFFF;
+    position: relative;
     h1 {
         display: flex;
         justify-content: center;
@@ -83,6 +84,11 @@
         .item:first-letter {
             text-transform: uppercase;
         }
+    }
+    .mat-spinner {
+        position: absolute;
+        top: 1em;
+        left: 1em;
     } // for large screens
     @media (min-width: 769px) {
         h1 {
