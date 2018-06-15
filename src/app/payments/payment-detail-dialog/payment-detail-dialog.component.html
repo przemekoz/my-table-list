@@ -1,8 +1,27 @@
-<h2 mat-dialog-title>{{data.payment_supplier}}</h2>
+<h4 mat-dialog-title>Details</h4>
 <mat-dialog-content>
-    {{data|json}}
+
+    <div class="row">
+        <span>Supplier:</span>
+        <span>{{data.element.payment_supplier}}</span>
+    </div>
+
+    <div class="row">
+        <span>Pound rating:</span>
+        <span><app-rating-set [rating]="data.element.payment_cost_rating"></app-rating-set></span>
+    </div>
+
+    <div class="row">
+        <span>Reference:</span>
+        <span>{{data.element.payment_ref}}</span>
+    </div>
+
+    <div class="row">
+        <span>Value:</span>
+        <span>&pound;{{data.element.payment_amount}}</span>
+    </div>
+
 </mat-dialog-content>
 <mat-dialog-actions>
-    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
-    <button mat-button [mat-dialog-close]="true">Ok</button>
+    <button mat-button [mat-dialog-close]="true">Close</button>
 </mat-dialog-actions>

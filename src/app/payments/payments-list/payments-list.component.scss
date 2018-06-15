@@ -64,6 +64,10 @@
         }
         .item.right {
             justify-content: flex-end;
+            padding-right: 3em;
+        }
+        .item.clickable {
+            cursor: pointer;
         }
         .header {
             padding: 1.1em 1.8em;

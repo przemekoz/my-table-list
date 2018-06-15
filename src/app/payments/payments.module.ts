@@ -25,6 +25,7 @@ import { PaymentDetailDialogComponent } from './payment-detail-dialog/payment-de
         RatingSetComponent,
         ListFilterComponent,
         PaymentDetailDialogComponent
-    ]
+    ],
+    entryComponents: [PaymentDetailDialogComponent]
 })
 export class PaymentsModule { }

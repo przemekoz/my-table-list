@@ -4,6 +4,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
     imports: [
@@ -11,7 +12,8 @@ import { MatDialogModule } from '@angular/material/dialog';
         MatProgressSpinnerModule,
         BrowserAnimationsModule,
         MatIconModule,
-        MatDialogModule
+        MatDialogModule,
+        MatButtonModule
 
     ],
     exports: [
@@ -19,7 +21,8 @@ import { MatDialogModule } from '@angular/material/dialog';
         MatProgressSpinnerModule,
         BrowserAnimationsModule,
         MatIconModule,
-        MatDialogModule
+        MatDialogModule,
+        MatButtonModule
     ],
     declarations: []
 })
